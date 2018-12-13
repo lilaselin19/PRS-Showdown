@@ -1,30 +1,116 @@
 
+body{
+  background-color: #ffffff;
+  font-size: 18px;
+  color: #000080;
+  font-family: 'Raleway', sans-serif;
+}
+
 h1 {
-  color: #ff0000;
-  background-color: #cccccc;
+  background-color: #00ffdd;
+  font-size: 40px;
   text-align: center;
 }
 
 div {
+  border-radius: 25px;
   margin-top: 50px;
   margin-bottom: 50px;
   margin-right: 50px;
   margin-left: 50px;
-  background-color: #ffffff;
-  background-color: #dddddd;
+  background-color: #66ffff;
+  overflow: auto;
+  padding:15px;
+}
 
+button{
+  background-color:#00ffdd;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 2px solid #00cccc;
+  padding: 7px 12px;
 }
-table, th, td {
-   border: 1px solid black;
+
+button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-.top_row{
-  background-color: #000000;
-  color: #ffffff;
+
+button:focus {
+  outline: none;
 }
+
+table{
+  border-collapse: collapse;
+  background-color: #4dffe7;
+  margin: auto;
+  width: 50%;
+}
+
+table, th, td{
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #ccfff8;
+}
+
+a{
+  color:#000080;
+}
+
+a:hover{
+  color:#00ccb1;
+}
+
 .hidden{
   display: none;
 }
 
 .visible{
+  display: block;
+}
+
+.bad{
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+}
+
+.good{
+  font-family: 'Tangerine', cursive;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+.center{
+  margin: auto;
+  width: 25%;
+  text-align: center;
+}
+
+#player_throw_image{
+  float: left;
+  width: 33%;
+  padding: 20px;
+}
+
+#bowser_throw_image{
+  float: right;
+  width: 33%;
+  padding: 10px;
+}
+
+#fireworks{
+  width: 33%;
+}
+
+#game_result_text{
+  font-size:40px;
+  text-shadow: 3px 2px rgba(0,0,0,0.19);
+}
+
+#logo{
   display:block;
+  width:10%;
 }
