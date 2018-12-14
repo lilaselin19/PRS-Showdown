@@ -5,13 +5,6 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
-body{
-  background-color: #ffffff;
-  font-size: 18px;
-  color: #000080;
-  font-family: 'Raleway', sans-serif;
-}
-
 h1 {
   background-color: #00ffdd;
   font-size: 40px;
@@ -40,7 +33,6 @@ button{
 button:hover{
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-<<<<<<< HEAD
 
 button:focus {
   outline: none;
@@ -67,34 +59,6 @@ a{
   color:#000080;
 }
 
-=======
-
-button:focus {
-  outline: none;
-}
-
-table{
-  border-collapse: collapse;
-  background-color: #4dffe7;
-  margin: auto;
-  width: 50%;
-}
-
-table, th, td{
-  border: 1px solid black;
-  padding: 3px;
-  text-align: center;
-}
-
-tr:hover {
-  background-color: #ccfff8;
-}
-
-a{
-  color:#000080;
-}
-
->>>>>>> 35401aefbbe8868ee8f928edb68552750400d94f
 a:hover{
   color:#00ccb1;
 }
@@ -124,13 +88,6 @@ a:hover{
   text-align: center;
 }
 
-<<<<<<< HEAD
-.headerlink{
-
-}
-
-=======
->>>>>>> 35401aefbbe8868ee8f928edb68552750400d94f
 #player_throw_image{
   float: left;
   width: 33%;
@@ -155,18 +112,9 @@ a:hover{
 #logo{
   display:block;
   width:10%;
-<<<<<<< HEAD
-}
-
-#logo{
-  display:block;
-  width:10%;
 }
 
 #headerimg{
   display: block;
   margin-left: auto;
   margin-right: auto;
-=======
->>>>>>> 35401aefbbe8868ee8f928edb68552750400d94f
-}
