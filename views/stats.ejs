@@ -12,26 +12,33 @@
     <table>
       <tr>
         <th class="top_row">Player Name</th>
-        <th class="top_row">Paper %</th>
-        <th class="top_row">Rock %</th>
-        <th class="top_row">Scissors %</th>
-        <th class="top_row">Wins %</th>
+        <th class="top_row">Games Played</th>
+        <th class="top_row">Games Won</th>
+        <th class="top_row">Games Lost</th>
+        <th class="top_row">Ties</th>
       </tr>
+
+      <%for(var i=0;i<users.length;i++){%>
       <tr>
-        <th><span class="player_name_span"></span>  </th>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td>
+        <%=users[i].name%>
+        </td>
+        <td>
+        <%=users[i]["games played"]%>
+        </td>
+        <td>
+        <%=users[i]["games won"]%>
+        </td>
+        <td>
+        <%=users[i]["games lost"]%>
+        </td>
+        <td>
+        <%var ties=users[i]["games played"]-users[i]["games won"]-users[i]["games lost"];%>
+        <%=ties%>
+        </td>
       </tr>
-      <tr>
-        <th> B(r)owser </th>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </table>
+
+      <%}%>
   </div>
 
   <footer>

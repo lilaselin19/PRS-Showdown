@@ -46,9 +46,26 @@ app.get('/rules', function(request, response){
 });
 
 app.get('/stats', function(request, response){
+  var user_data=[];
+  var user_file=fs.readFileSync("data/users.csv","utf8");
+  var user_lines =user_file.split('\n');
+  console.log(user_file);
+  console.log(user_lines);
+  for(var i=1; i<user_lines.length; i++){
+    var single_user=user_lines[i].trim().split(',');
+    var user_object={}
+
+    user_object["name"]=single_user[0];
+    user_object["games played"]=parseInt(single_user[1]);
+    user_object["games won"]=parseInt(single_user[2]);
+    user_object["games lost"]=parseInt(single_user[3]);
+
+    user_data.push(user_object);
+  }
+  console.log(user_data);
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('stats');
+  response.render('stats',{users:user_data});
 });
 app.get('/about', function(request, response){
   response.status(200);
