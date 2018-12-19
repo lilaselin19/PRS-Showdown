@@ -5,13 +5,6 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
-body{
-  background-color: #ffffff;
-  font-size: 18px;
-  color: #000080;
-  font-family: 'Raleway', sans-serif;
-}
-
 h1 {
   background-color: #00ffdd;
   font-size: 40px;
@@ -95,10 +88,13 @@ a:hover{
   text-align: center;
 }
 
+<<<<<<< HEAD
 .headerlink{
 
 }
 
+=======
+>>>>>>> 8dd2cffa3f4b7f290a33bfcb83ccb72112888064
 #player_throw_image{
   float: left;
   width: 33%;
@@ -129,4 +125,7 @@ a:hover{
   display: block;
   margin-left: auto;
   margin-right: auto;
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 8dd2cffa3f4b7f290a33bfcb83ccb72112888064
