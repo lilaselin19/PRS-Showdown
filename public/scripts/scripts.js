@@ -13,7 +13,17 @@ toggleVisibility(document.getElementById("show_stats_button"), document.getEleme
 
 document.getElementById("enter_name_button").addEventListener("click", function(){
   var p_name=document.getElementById("enter_name_input").value;
-  localStorage.setItem("player_name",p_name);
+  var user_file=fs.readFileSync("data/users.csv", "utf8");
+
+  var user_lines = user_file.split('\n');
+  for(var i=1; i<user_lines.length-1; i++){
+    var user_object={};
+    var single_user = user_lines[i].trim().split(",");
+    user_object["name"]=single_user[0];
+
+    users_data.push(user_object);
+  }
+
   showOrNot(document.getElementById("enter_name"), false);
   showOrNot(document.getElementById("throw_choice"), true);
   updateNames(p_name);
