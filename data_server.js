@@ -23,7 +23,6 @@ app.get('/', function(request, response){
 app.get('/login', function(request, response){
   var user_data={
       name: request.query.player_name
-      password: request.query.password
   };
 
   response.status(200);
