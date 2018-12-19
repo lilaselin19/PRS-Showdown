@@ -22,12 +22,46 @@ app.get('/', function(request, response){
 
 app.get('/login', function(request, response){
   var user_data={
-      name: request.query.player_name
+      name: request.query.player_name,
+      password: request.query.password
   };
+  var return_user=false;
+  var correct_password=false;
+  var user_file=fs.readFileSync("data/users.csv", "utf8");
+  console.log(user_file)
+  var user_lines = user_file.split('\n');
+  for(var i=1; i<user_lines.length-1; i++){
+    var single_user = user_lines[i].trim().split(",");
+    if(user_data["name"]==single_user[0]){
+      return_user=true;
+      if(user_data["password"]==single_user[1]) correct_password=true;
+      break;
+    }
+  }
 
-  response.status(200);
-  response.setHeader('Content-Type', 'text/html')
-  response.render('game', {user:user_data});
+  if(return_user==false){
+    ////create new user
+    user_file+=user_data["name"]+","+user_data["password"]+",0,0,0,0,0,0"+'\n';
+    fs.writeFileSync("data/users.csv","utf8",user_file);
+
+    //move to next page
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render('game', {user:user_data});
+  }
+
+  else if(correct_password==false){
+    ////ask for password again
+  }
+
+  else{
+    //move to next page
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render('game', {user:user_data});
+  }
+
+
 });
 
 app.get('/:user/results', function(request, response){
