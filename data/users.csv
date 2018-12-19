@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 Name,Games Played,Games Won,Games Lost,Paper,Rock,Scissors
 mario,15,7,7,5,5,5
 luigi,10,3,5,2,3,5
 toad,5,4,1,1,3,1
 peach,8,5,2,4,4,0
-=======
-Name,Games Played,Games Won,Games Lost,Paper,Rock,Scissors
-mario,15,7,7,5,5,5
-luigi,10,3,5,2,3,5
-toad,5,4,1,1,3,1
-peach,8,5,2,4,4,0
->>>>>>> 8dd2cffa3f4b7f290a33bfcb83ccb72112888064

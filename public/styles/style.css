@@ -88,13 +88,12 @@ a:hover{
   text-align: center;
 }
 
-<<<<<<< HEAD
+=======
 .headerlink{
-
+  text-align: center;
 }
 
-=======
->>>>>>> 8dd2cffa3f4b7f290a33bfcb83ccb72112888064
+>>>>>>> e4237bf90f738cbe848e987c4f998bc321b22ac3
 #player_throw_image{
   float: left;
   width: 33%;
@@ -125,7 +124,4 @@ a:hover{
   display: block;
   margin-left: auto;
   margin-right: auto;
-<<<<<<< HEAD
 }
-=======
->>>>>>> 8dd2cffa3f4b7f290a33bfcb83ccb72112888064

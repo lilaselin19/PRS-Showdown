@@ -59,13 +59,12 @@ app.get('/stats', function(request, response){
     var user_object={};
     var single_user = user_lines[i].trim().split(",");
     user_object["name"]=single_user[0];
-    user_object["games played"]=parseInt(single_user[1]);
-    console.log(user_object["games played"]);
-    user_object["games won"]=parseInt(single_user[2]);
-    user_object["games lost"]=parseInt(single_user[3]);
-    user_object["paper"]=parseInt(single_user[4]);
-    user_object["rock"]=parseInt(single_user[5]);
-    user_object["scissors"]=parseInt(single_user[6]);
+    user_object["games played"]=parseInt(single_user[2]);
+    user_object["games won"]=parseInt(single_user[3]);
+    user_object["games lost"]=parseInt(single_user[4]);
+    user_object["paper"]=parseInt(single_user[5]);
+    user_object["rock"]=parseInt(single_user[6]);
+    user_object["scissors"]=parseInt(single_user[7]);
 
     users_data.push(user_object);
   }
