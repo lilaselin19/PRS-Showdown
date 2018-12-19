@@ -1,21 +1,5 @@
-if(!player_name){
-  showOrNot(document.getElementById("enter_name"), true);
-  showOrNot(document.getElementById("enter_password_input"),false)
-  showOrNot(document.getElementById("enter_password_button"),false)
-}else {
-  updateNames(player_name);
-  showOrNot(document.getElementById("throw_choice"), true);
-}
 
 ///////////////////Event Listions//////////////////
-
-document.getElementById("enter_name_button").addEventListener("click", function(){
-  var p_name=document.getElementById("enter_name_input").value;
-
-  showOrNot(document.getElementById("enter_name"), false);
-  showOrNot(document.getElementById("throw_choice"), true);
-  updateNames(p_name);
-});
 
 ///////////////////Helper function//////////////////
 function updateNames(name){
