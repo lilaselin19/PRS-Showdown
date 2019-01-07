@@ -21,6 +21,7 @@ app.get('/', function(request, response){
 });
 
 app.get('/login', function(request, response){
+  console.log('Check 1');
   var user_data={
       name: request.query.player_name,
       password: request.query.password
@@ -28,7 +29,6 @@ app.get('/login', function(request, response){
   var return_user=false;
   var correct_password=false;
   var user_file=fs.readFileSync("data/users.csv", "utf8");
-  console.log(user_file)
   var user_lines = user_file.split('\n');
   for(var i=1; i<user_lines.length-1; i++){
     var single_user = user_lines[i].trim().split(",");
@@ -42,7 +42,9 @@ app.get('/login', function(request, response){
   if(return_user==false){
     ////create new user
     user_file+=user_data["name"]+","+user_data["password"]+",0,0,0,0,0,0"+'\n';
-    fs.writeFileSync("data/users.csv","utf8",user_file);
+    console.log("Check 2");
+    fs.writeFileSync("data/users.csv",user_file,"utf8");
+    console.log("Check 3");
 
     //move to next page
     response.status(200);
