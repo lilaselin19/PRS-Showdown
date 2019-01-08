@@ -70,7 +70,7 @@ app.get('/login', function(request, response){
 
 app.get('/:user/game', function(request, response){
   var user_data={
-    name: request.params.us
+    name: request.params.user
   };
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
@@ -82,9 +82,13 @@ app.get('/:user/results', function(request, response){
       name: request.params.user,
       weapon: request.query.weapon
   };
+
+  user_file+=user_data["name"]+","+user_data["password"]+",0,0,0,0,0,0"+'\n';
+  fs.writeFileSync("data/users.csv",user_file,"utf8");
+
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.send(JSON.stringify(user_data));
+  response.render('results');
 });
 
 app.get('/rules', function(request, response){
@@ -93,7 +97,7 @@ app.get('/rules', function(request, response){
   response.render('rules');
 });
 
-app.get('/stats', function(request, response){
+app.get('/:user/stats', function(request, response){
   var this_user={
       name: request.params.user,
   }
