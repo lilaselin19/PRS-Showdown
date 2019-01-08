@@ -66,8 +66,15 @@ app.get('/login', function(request, response){
     response.setHeader('Content-Type', 'text/html')
     response.render('game', {user:user_data});
   }
+});
 
-
+app.get('/:user/game', function(request, response){
+  var user_data={
+    name: request.params.us
+  };
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render('game', {user:user_data});
 });
 
 app.get('/:user/results', function(request, response){
