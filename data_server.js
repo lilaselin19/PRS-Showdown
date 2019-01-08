@@ -48,7 +48,7 @@ app.get('/login', function(request, response){
     //move to next page
     response.status(200);
     response.setHeader('Content-Type', 'text/html')
-    response.render('game', {user:user_data});
+    response.render('login_game', {user:user_data});
   }
 
   else if(correct_password==false){
@@ -64,7 +64,7 @@ app.get('/login', function(request, response){
     //console.log("Returning player and password");
     response.status(200);
     response.setHeader('Content-Type', 'text/html')
-    response.render('game', {user:user_data});
+    response.render('login_game', {user:user_data});
   }
 });
 
