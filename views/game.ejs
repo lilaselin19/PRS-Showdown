@@ -6,7 +6,14 @@
  </head>
 
 <body>
-  <% include global/header %>
+  <img id="headerimg" src="../images/logo.png" height="100" width="150">
+  <h1>P, R, S: Showdown</h1>
+  <a class="headerlink" href ="/">Home</a>
+  <a class="headerlink" href ="/about">About</a>
+  <a class="headerlink" href ="/<%=user.name%>/game">Game</a>
+  <a class="headerlink" href ="/stats">View Stats</a>
+  <a class="headerlink" href ="/rules">View Rules</a>
+  <a class="headerlink" href ="/">Logout</a>
 
   <div id="throw_choice">
       <h2>Play the Game</h2>
@@ -23,6 +30,6 @@
       </form>
     </div>
   <% include global/footer %>
-  
+
  </body>
 </html>
