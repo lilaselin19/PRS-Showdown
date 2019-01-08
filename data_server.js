@@ -21,7 +21,7 @@ app.get('/', function(request, response){
 });
 
 app.get('/login', function(request, response){
-  console.log('Login requested');
+  //console.log('Login requested');
   var user_data={
       name: request.query.player_name,
       password: request.query.password
@@ -41,7 +41,7 @@ app.get('/login', function(request, response){
 
   if(return_user==false){
     ////create new user
-    console.log("New user");
+    //console.log("New user");
     user_file+=user_data["name"]+","+user_data["password"]+",0,0,0,0,0,0"+'\n';
     fs.writeFileSync("data/users.csv",user_file,"utf8");
 
@@ -53,7 +53,7 @@ app.get('/login', function(request, response){
 
   else if(correct_password==false){
     ////ask for password again
-    console.log("Incorrect password");
+    //console.log("Incorrect password");
     response.status(200);
     response.setHeader('Content-Type', 'text/html')
     response.render('retry');
@@ -61,7 +61,7 @@ app.get('/login', function(request, response){
 
   else{
     //move to next page
-    console.log("Return player and password");
+    //console.log("Returning player and password");
     response.status(200);
     response.setHeader('Content-Type', 'text/html')
     response.render('game', {user:user_data});
