@@ -107,10 +107,13 @@ app.get('/:user/results', function(request, response){
   response.render('results', {user:user_data});
 });
 
-app.get('/rules', function(request, response){
+app.get('/:user/rules', function(request, response){
+  var this_user={
+      name: request.params.user,
+  }
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('rules', {user:user_data});
+  response.render('rules',{user:this_user});
 });
 
 app.get('/:user/stats', function(request, response){
@@ -139,10 +142,13 @@ app.get('/:user/stats', function(request, response){
 
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('stats',{users:users_data},{user:this_user});
+  response.render('stats',{users:users_data, user:this_user});
 });
-app.get('/about', function(request, response){
+app.get('/:user/about', function(request, response){
+  var this_user={
+      name: request.params.user,
+  }
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('about');
+  response.render('about',{user:this_user});
 });
