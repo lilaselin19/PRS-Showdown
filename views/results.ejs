@@ -2,12 +2,27 @@
 <html>
 <head>
   <title>P,R,S - Results</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="../styles/style.css">
  </head>
 
 <body>
-  <% include global/header %>
+  <img id="headerimg" src="../images/logo.png" height="100" width="150">
+  <h1>P, R, S: Showdown</h1>
+  <a class="headerlink" href ="/">Home</a>
+  <a class="headerlink" href ="/about">About</a>
+  <a class="headerlink" href ="/<%=user.name%>/game">Game</a>
+  <a class="headerlink" href ="/<%=user.name%>/stats">View Stats</a>
+  <a class="headerlink" href ="/rules">View Rules</a>
+  <a class="headerlink" href ="/">Logout</a>
   <h1>Results</h1>
+  <img id="player_hand" src="../images/logo.png" align="left" height="300" width="200">
+  <img id="villain_hand" src="../images/logo.png" align="right" height="300" width="200">
+  <p id="game_summary">You <%=user.result%></p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <% include global/footer %>
  </body>
 </html>
