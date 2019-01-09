@@ -82,8 +82,24 @@ app.get('/:user/results', function(request, response){
       name: request.params.user,
       weapon: request.query.weapon
   };
+  var user_file=fs.readFileSync("data/users.csv", "utf8");
+  var user_lines = user_file.split('\n');
+  for(var i=1; i<user_lines.length-1; i++){
+    var single_user = user_lines[i].trim().split(",");
+    if(user_data["name"]==single_user[0]){
+      single_user[2]=parseInt(single_user[2])+1;
+      if(user_data["weapon"]=="paper"){
+        single_user[5]=parseInt(single_user[5])+1;}
+      if(user_data["weapon"]=="rock"){
+        single_user[6]=parseInt(single_user[6])+1;}
+      if(user_data["weapon"]=="scissors"){
+        single_user[7]=parseInt(single_user[7])+1;}
+      user_lines[i]=single_user.join(",");
+      break;
+    }
+  }
+  user_file=user_lines.join('\n');
 
-  user_file+=user_data["name"]+","+user_data["password"]+",0,0,0,0,0,0"+'\n';
   fs.writeFileSync("data/users.csv",user_file,"utf8");
 
   response.status(200);
