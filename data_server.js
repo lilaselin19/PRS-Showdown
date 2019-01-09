@@ -84,6 +84,22 @@ app.get('/:user/results', function(request, response){
       villain: request.query.villain,
       result: "tied."
   };
+  var v_hand;
+  var v_file=fs.readFileSync("data/villains.csv","utf8");
+  var v_lines = v_file.split("\n");
+  for(var i=1; i<v_lines.length-1; i++){
+    var single_v = v_lines.trim().split(",");
+    if(user_data["villain"]==single_v[0]){
+      if(single_v[7]=="Random"){
+        var r = Math.random();
+        if(r<=.33)v_hand="paper";
+        else if(r<=.66)v_hand="rock";
+        else v_hand="scissors";
+      }
+    }
+  }
+  user_data["villain image"]=user_data["villain"]+"_"+v_hand+".svg";
+
   var user_file=fs.readFileSync("data/users.csv", "utf8");
   var user_lines = user_file.split('\n');
   for(var i=1; i<user_lines.length-1; i++){
