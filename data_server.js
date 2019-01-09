@@ -104,13 +104,13 @@ app.get('/:user/results', function(request, response){
 
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('results');
+  response.render('results', {user:user_data});
 });
 
 app.get('/rules', function(request, response){
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('rules');
+  response.render('rules', {user:user_data});
 });
 
 app.get('/:user/stats', function(request, response){
@@ -139,7 +139,7 @@ app.get('/:user/stats', function(request, response){
 
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('stats',{users:users_data});
+  response.render('stats',{users:users_data},{user:this_user});
 });
 app.get('/about', function(request, response){
   response.status(200);
