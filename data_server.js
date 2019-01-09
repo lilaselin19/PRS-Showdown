@@ -80,7 +80,9 @@ app.get('/:user/game', function(request, response){
 app.get('/:user/results', function(request, response){
   var user_data={
       name: request.params.user,
-      weapon: request.query.weapon
+      weapon: request.query.weapon,
+      villain: request.query.villain,
+      result: "tied."
   };
   var user_file=fs.readFileSync("data/users.csv", "utf8");
   var user_lines = user_file.split('\n');
