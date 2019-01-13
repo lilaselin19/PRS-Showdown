@@ -1,31 +1,13 @@
-<<<<<<< HEAD
-villains
 Name,Games Played,Games Won,Games Lost,Paper,Rock,Scissors,Strategy
-Bones,0,0,0,0,0,0,Random
-Gato,0,0,0,0,0,0,Random
-Manny,0,0,0,0,0,0,Sticking
-Mr. Modern,0,0,0,0,0,0,Random
-Regal,0,0,0,0,0,0,Win Stats
-The Boss,0,0,0,0,0,0,Cheater
-Comic Hans,0,0,0,0,0,0,Lose Stats
-Harry,0,0,0,0,0,0,Trickery
-Mickey,0,0,0,0,0,0,Tie Stats
-Pixie,0,0,0,0,0,0,Follows
-Spock,0,0,0,0,0,0,Favors Scissors
-The Magician,0,0,0,0,0,0,No Ties
-=======
-Name,Games Played,Games Won,Games Lost,Paper,Rock,Scissors,Strategy
-Bones,0,0,0,0,0,0,Random
-Gato,0,0,0,0,0,0,Random
-Manny,0,0,0,0,0,0,Sticking
-Mr. Modern,0,0,0,0,0,0,Random
-Regal,0,0,0,0,0,0,Win Stats
-The Boss,0,0,0,0,0,0,Cheater
-Comic Hans,0,0,0,0,0,0,Lose Stats
-Harry,0,0,0,0,0,0,Trickery
-Mickey,0,0,0,0,0,0,Tie Stats
-Pixie,0,0,0,0,0,0,Follows
-Spock,0,0,0,0,0,0,Favors Scissors
-The Magician,0,0,0,0,0,0,No Ties
->>>>>>> 8dd2cffa3f4b7f290a33bfcb83ccb72112888064
-Bowser,0,0,0,0,0,0,Random
+bones,0,0,0,0,0,0,Random
+gato,0,0,0,0,0,0,Random
+Mmnny,0,0,0,0,0,0,Random
+mr_modern,0,0,0,0,0,0,Random
+regal,0,0,0,0,0,0,Win Stats
+the_boss,0,0,0,0,0,0,Cheater
+comic_hans,0,0,0,0,0,0,Lose Stats
+harry,0,0,0,0,0,0,Random
+mickey,0,0,0,0,0,0,Tie Stats
+pixie,0,0,0,0,0,0,Random
+spock,0,0,0,0,0,0,Favors Scissors
+the_magician,0,0,0,0,0,0,No Ties
