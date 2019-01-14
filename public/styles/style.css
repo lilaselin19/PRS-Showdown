@@ -92,13 +92,13 @@ a:hover{
   text-align: center;
 }
 
-#player_throw_image{
+#player_hand{
   float: left;
   width: 33%;
   padding: 20px;
 }
 
-#bowser_throw_image{
+#villain_hand{
   float: right;
   width: 33%;
   padding: 10px;

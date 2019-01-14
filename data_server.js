@@ -90,6 +90,7 @@ app.get('/:user/results', function(request, response){
       villain: request.query.villain,
   };
 
+//finds player in csv file
   var user_file=fs.readFileSync("data/users.csv", "utf8");
   var user_lines = user_file.split('\n');
   var player;
@@ -103,12 +104,16 @@ app.get('/:user/results', function(request, response){
     }
   }
 
+//finds villain in csv file
   var v_hand;
+  var villain;
   var v_file=fs.readFileSync("data/villains.csv","utf8");
   var v_lines = v_file.split("\n");
   for(var i=1; i<v_lines.length-1; i++){
     var single_v = v_lines[i].trim().split(",");
     if(user_data["villain"]==single_v[0]){
+      villain=single_v;
+      //determines the villain's hand
       if(single_v[7]=="Random"){
         var r = Math.random();
         if(r<=.33)v_hand="paper";
@@ -150,14 +155,17 @@ app.get('/:user/results', function(request, response){
       }
     }
   }
+  //sends file name of villain hand
   user_data["villain image"]=user_data["villain"]+"_"+v_hand+".svg";
 
+  //sends text results of game
   if(user_data["weapon"]==v_hand) user_data["result"]="tied."
   else if(user_data["weapon"]=="paper"&&v_hand=="rock")user_data["result"]="won!"
   else if(user_data["weapon"]=="rock"&&v_hand=="scissors")user_data["result"]="won!"
   else if(user_data["weapon"]=="scissors"&&v_hand=="paper")user_data["result"]="won!"
   else user_data["result"]="lost."
 
+  //updates player stats
   player[2]=parseInt(player[2])+1;
   if(user_data["result"]=="won!"){
     player[3]=parseInt(player[3])+1;}
@@ -171,9 +179,13 @@ app.get('/:user/results', function(request, response){
     player[7]=parseInt(player[7])+1;}
   user_lines[p_index]=player.join(",");
 
+  //compiles player stats updates
   user_file=user_lines.join('\n');
   fs.writeFileSync("data/users.csv",user_file,"utf8");
 
+  //updates villain stats
+
+  //sends the response
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
   response.render('results', {user:user_data});
@@ -192,6 +204,26 @@ app.get('/:user/stats', function(request, response){
   var this_user={
       name: request.params.user,
   }
+  var villains_data=[];
+  //load the data from the csv
+  var v_file=fs.readFileSync("data/villains.csv", "utf8");
+
+  //parse the data from the csv into a non-string format
+    var v_lines = v_file.split('\n');
+    for(var i=1; i<v_lines.length-1; i++){
+      var v_object={};
+      var single_v = v_lines[i].trim().split(",");
+      v_object["name"]=single_v[0];
+      v_object["games played"]=parseInt(single_v[1]);
+      v_object["games won"]=parseInt(single_v[2]);
+      v_object["games lost"]=parseInt(single_v[3]);
+      v_object["paper"]=parseInt(single_v[4]);
+      v_object["rock"]=parseInt(single_v[5]);
+      v_object["scissors"]=parseInt(single_v[6]);
+
+      villains_data.push(v_object);
+    }
+
   var users_data=[];
 //load the data from the csv
   var user_file=fs.readFileSync("data/users.csv", "utf8");
@@ -210,11 +242,12 @@ app.get('/:user/stats', function(request, response){
     user_object["scissors"]=parseInt(single_user[7]);
 
     users_data.push(user_object);
+    if(single_user[0]==this_user["name"]) this_user=single_user[0]
   }
 
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render('stats',{users:users_data, user:this_user});
+  response.render('stats',{users:users_data, user:this_user, villains:villains_data});
 });
 
 app.get('/:user/about', function(request, response){
