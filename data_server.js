@@ -26,6 +26,12 @@ app.get('/login', function(request, response){
       name: request.query.player_name,
       password: request.query.password
   };
+  if(user_data["name"]==""){
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render('index');
+  }
+
   var return_user=false;
   var correct_password=false;
   var user_file=fs.readFileSync("data/users.csv", "utf8");
@@ -82,13 +88,26 @@ app.get('/:user/results', function(request, response){
       name: request.params.user,
       weapon: request.query.weapon,
       villain: request.query.villain,
-      result: "tied."
   };
+
+  var user_file=fs.readFileSync("data/users.csv", "utf8");
+  var user_lines = user_file.split('\n');
+  var player;
+  var p_index;
+  for(var i=1; i<user_lines.length-1; i++){
+    var single_user = user_lines[i].trim().split(",");
+    if(user_data["name"]==single_user[0]){
+      p_index=i;
+      player = single_user;
+      break;
+    }
+  }
+
   var v_hand;
   var v_file=fs.readFileSync("data/villains.csv","utf8");
   var v_lines = v_file.split("\n");
   for(var i=1; i<v_lines.length-1; i++){
-    var single_v = v_lines.trim().split(",");
+    var single_v = v_lines[i].trim().split(",");
     if(user_data["villain"]==single_v[0]){
       if(single_v[7]=="Random"){
         var r = Math.random();
@@ -96,28 +115,63 @@ app.get('/:user/results', function(request, response){
         else if(r<=.66)v_hand="rock";
         else v_hand="scissors";
       }
+      else if(single_v[7]=="Cheater"){
+        if(user_data["weapon"]=="rock")v_hand="paper";
+        else if(user_data["weapon"]=="scissors")v_hand="rock";
+        else v_hand="scissors";
+      }
+      else if(single_v[7]=="Win Stats"){
+        if(Math.max(player[5],player[6],player[7])==player[5])v_hand="scissors";
+        else if(Math.max(player[5],player[6],player[7])==player[6])v_hand="paper";
+        else if(Math.max(player[5],player[6],player[7])==player[7])v_hand="rock";
+      }
+      else if(single_v[7]=="Lose Stats"){
+        if(Math.max(player[5],player[6],player[7])==player[5])v_hand="rock";
+        else if(Math.max(player[5],player[6],player[7])==player[6])v_hand="scissors";
+        else if(Math.max(player[5],player[6],player[7])==player[7])v_hand="paper";
+      }
+      else if(single_v[7]=="Tie Stats"){
+        if(Math.max(player[5],player[6],player[7])==player[5])v_hand="paper";
+        else if(Math.max(player[5],player[6],player[7])==player[6])v_hand="rock";
+        else if(Math.max(player[5],player[6],player[7])==player[7])v_hand="scissors";
+      }
+      else if(single_v[7]=="No Ties"){
+        var r = Math.random();
+        var a = ["paper","rock","scissors"];
+        a.splice(a.indexOf(user_data["weapon"]),1);
+        if(r<.5) v_hand=a[0];
+        else v_hand=a[1];
+      }
+      else if(single_v[7]=="Favors Scissors"){
+        var r = Math.random();
+        if(r<.5) v_hand="scissors";
+        else if(r<.75) v_hand="rock";
+        else v_hand="paper";
+      }
     }
   }
   user_data["villain image"]=user_data["villain"]+"_"+v_hand+".svg";
 
-  var user_file=fs.readFileSync("data/users.csv", "utf8");
-  var user_lines = user_file.split('\n');
-  for(var i=1; i<user_lines.length-1; i++){
-    var single_user = user_lines[i].trim().split(",");
-    if(user_data["name"]==single_user[0]){
-      single_user[2]=parseInt(single_user[2])+1;
-      if(user_data["weapon"]=="paper"){
-        single_user[5]=parseInt(single_user[5])+1;}
-      if(user_data["weapon"]=="rock"){
-        single_user[6]=parseInt(single_user[6])+1;}
-      if(user_data["weapon"]=="scissors"){
-        single_user[7]=parseInt(single_user[7])+1;}
-      user_lines[i]=single_user.join(",");
-      break;
-    }
-  }
-  user_file=user_lines.join('\n');
+  if(user_data["weapon"]==v_hand) user_data["result"]="tied."
+  else if(user_data["weapon"]=="paper"&&v_hand=="rock")user_data["result"]="won!"
+  else if(user_data["weapon"]=="rock"&&v_hand=="scissors")user_data["result"]="won!"
+  else if(user_data["weapon"]=="scissors"&&v_hand=="paper")user_data["result"]="won!"
+  else user_data["result"]="lost."
 
+  player[2]=parseInt(player[2])+1;
+  if(user_data["result"]=="won!"){
+    player[3]=parseInt(player[3])+1;}
+  else if(user_data["result"]=="lost."){
+    player[4]=parseInt(player[4])+1;}
+  if(user_data["weapon"]=="paper"){
+    player[5]=parseInt(player[5])+1;}
+  else if(user_data["weapon"]=="rock"){
+    player[6]=parseInt(player[6])+1;}
+  else if(user_data["weapon"]=="scissors"){
+    player[7]=parseInt(player[7])+1;}
+  user_lines[p_index]=player.join(",");
+
+  user_file=user_lines.join('\n');
   fs.writeFileSync("data/users.csv",user_file,"utf8");
 
   response.status(200);
@@ -162,6 +216,7 @@ app.get('/:user/stats', function(request, response){
   response.setHeader('Content-Type', 'text/html')
   response.render('stats',{users:users_data, user:this_user});
 });
+
 app.get('/:user/about', function(request, response){
   var this_user={
       name: request.params.user,
