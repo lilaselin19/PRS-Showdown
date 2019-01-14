@@ -6,14 +6,7 @@
  </head>
 
 <body>
-  <img id="headerimg" src="../images/logo.png" height="100" width="150">
-  <h1>P, R, S: Showdown</h1>
-  <a class="headerlink" href ="/">Home</a>
-  <a class="headerlink" href ="/about">About</a>
-  <a class="headerlink" href ="/<%=user.name%>/game">Game</a>
-  <a class="headerlink" href ="/<%=user.name%>/stats">View Stats</a>
-  <a class="headerlink" href ="/rules">View Rules</a>
-  <a class="headerlink" href ="/">Logout</a>
+  <% include global/header %>
   <h1>Results</h1>
   <%if(user.weapon=='rock'){%> <img id="player_hand" src="../images/player_rock.png" align="left" height="300" width="200"> <%}%>
   <%else if(user.weapon=='paper'){%> <img id="player_hand" src="../images/player_paper.png" align="left" height="300" width="200"> <%}%>
