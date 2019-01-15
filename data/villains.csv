@@ -1,13 +1,13 @@
 Name,Games Played,Games Won,Games Lost,Paper,Rock,Scissors,Strategy
-bones,1,1,0,0,0,1,Random
-gato,0,0,0,0,0,0,Random
-Manny,0,0,0,0,0,0,Random
-mr_modern,0,0,0,0,0,0,Random
-regal,0,0,0,0,0,0,Win Stats
-the_boss,0,0,0,0,0,0,Cheater
-comic_hans,0,0,0,0,0,0,Lose Stats
-harry,0,0,0,0,0,0,Random
-mickey,0,0,0,0,0,0,Tie Stats
-pixie,0,0,0,0,0,0,Random
-spock,0,0,0,0,0,0,Favors Scissors
-the_magician,0,0,0,0,0,0,No Ties
+bones,6,3,3,0,2,4,Random
+gato,1,0,0,0,1,0,Random
+manny,1,0,0,0,0,1,Random
+mr_modern,1,0,0,1,0,0,Random
+regal,1,0,1,0,0,1,Win Stats
+the_boss,3,3,0,1,1,1,Cheater
+comic_hans,2,0,2,0,2,0,Lose Stats
+harry,1,0,1,0,1,0,Random
+mickey,1,0,0,1,0,0,Tie Stats
+pixie,2,0,2,0,2,0,Random
+spock,1,1,0,0,0,1,Favors Scissors
+the_magician,1,1,0,0,1,0,No Ties
