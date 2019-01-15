@@ -40,6 +40,39 @@
       <%}%>
     </table>
   </div>
+  <div id="villain_stats">
+    <table>
+      <tr>
+        <th class="top_row">Player Name</th>
+        <th class="top_row">Games Played</th>
+        <th class="top_row">Games Won</th>
+        <th class="top_row">Games Lost</th>
+        <th class="top_row">Ties</th>
+      </tr>
+
+      <%for(var i=0;i<users.length;i++){%>
+      <tr>
+        <td>
+        <%=villains[i].name%>
+        </td>
+        <td>
+        <%=villains[i]["games played"]%>
+        </td>
+        <td>
+        <%=villains[i]["games won"]%>
+        </td>
+        <td>
+        <%=villains[i]["games lost"]%>
+        </td>
+        <td>
+        <%var ties=villains[i]["games played"]-villains[i]["games won"]-villains[i]["games lost"];%>
+        <%=ties%>
+        </td>
+      </tr>
+
+      <%}%>
+    </table>
+  </div>
   <% include global/footer %>
  </body>
 
