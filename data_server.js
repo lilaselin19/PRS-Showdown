@@ -263,6 +263,9 @@ app.get('/:user/stats', function(request, response){
     if(single_user[0]==this_user["name"]) this_user=single_user[0]
   }
 
+  users_data.sort(function(a,b){return b["games won"]-a["games won"]});
+  villains_data.sort(function(a,b){return b["games won"]-a["games won"]});
+
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
   response.render('stats',{users:users_data, user:this_user, villains:villains_data});
