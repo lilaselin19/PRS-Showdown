@@ -107,12 +107,14 @@ app.get('/:user/results', function(request, response){
 //finds villain in csv file
   var v_hand;
   var villain;
+  var v_index;
   var v_file=fs.readFileSync("data/villains.csv","utf8");
   var v_lines = v_file.split("\n");
   for(var i=1; i<v_lines.length-1; i++){
     var single_v = v_lines[i].trim().split(",");
     if(user_data["villain"]==single_v[0]){
-      villain=single_v;
+      villain = single_v;
+      v_index=i;
       //determines the villain's hand
       if(single_v[7]=="Random"){
         var r = Math.random();
@@ -184,6 +186,22 @@ app.get('/:user/results', function(request, response){
   fs.writeFileSync("data/users.csv",user_file,"utf8");
 
   //updates villain stats
+  villain[1]=parseInt(villain[1])+1;
+  if(user_data["result"]=="lost."){
+    villain[2]=parseInt(villain[2])+1;}
+  else if(user_data["result"]=="won!"){
+    villain[3]=parseInt(villain[3])+1;}
+  if(v_hand=="paper"){
+    villain[4]=parseInt(villain[4])+1;}
+  else if(v_hand=="rock"){
+    villain[5]=parseInt(villain[5])+1;}
+  else if(v_hand=="scissors"){
+    villain[6]=parseInt(villain[6])+1;}
+  v_lines[v_index]=villain.join(",");
+
+  //compiles villain stats updates
+  v_file=v_lines.join('\n');
+  fs.writeFileSync("data/villains.csv",v_file,"utf8");
 
   //sends the response
   response.status(200);

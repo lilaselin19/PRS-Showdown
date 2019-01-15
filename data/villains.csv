@@ -1,7 +1,7 @@
 Name,Games Played,Games Won,Games Lost,Paper,Rock,Scissors,Strategy
-bones,0,0,0,0,0,0,Random
+bones,1,1,0,0,0,1,Random
 gato,0,0,0,0,0,0,Random
-Mmnny,0,0,0,0,0,0,Random
+Manny,0,0,0,0,0,0,Random
 mr_modern,0,0,0,0,0,0,Random
 regal,0,0,0,0,0,0,Win Stats
 the_boss,0,0,0,0,0,0,Cheater

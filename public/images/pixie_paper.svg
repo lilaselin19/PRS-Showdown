@@ -15,7 +15,7 @@
    xml:space="preserve"
    id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="pixie_paper(1).svg"
+   sodipodi:docname="pixie_paper.svg"
    width="66"
    height="51"><metadata
      id="metadata40"><rdf:RDF><cc:Work
@@ -48,7 +48,7 @@
      id="title4">Hand Left Paper</title><desc
      id="desc6">Created with Sketch.</desc><g
      id="g8"
-     transform="matrix(-1,0,0,1,72,-12)"><rect
+     transform="translate(-6,-12)"><rect
        x="45"
        y="18"
        width="6"
