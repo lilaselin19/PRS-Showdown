@@ -88,6 +88,14 @@ a:hover{
   text-align: center;
 }
 
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
 .headerlink{
   text-align: center;
 }
@@ -122,4 +130,8 @@ a:hover{
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+#weapon_select{
+  float:left;
 }

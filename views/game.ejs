@@ -3,24 +3,28 @@
 <head>
   <title>P,R,S - Game</title>
   <link rel="stylesheet" href="../styles/style.css">
- </head>
+</head>
 
 <body>
-<% include global/header %>
+  <% include global/header %>
 
   <div id="throw_choice">
       <h2>Play the Game</h2>
       <h4><%=user.name%> it's your turn to bust a move!</h4>
       <form action= "/<%=user.name%>/results" method="get">
-        Enter your choice of weapon:<br>
-        <select name="weapon">
+        <p class="left">Enter your choice of weapon:</p>
+        <br>
+        <br>
+        <select clas="left" id="weapon_select" name="weapon">
           <option value=" "> </option>
           <option value="paper">Paper</option>
           <option value="rock">Rock</option>
           <option value="scissors">Scissors</option>
-        </select><br>
-        Enter your villain:<br>
-        <select name="villain">
+        </select>
+        <p class="right">Enter your villain:</p>
+        <br>
+        <br>
+        <select id="villain_select" class="right" name="villain">
           <option value=" "> </option>
           <option value="bones">Bones</option>
           <option value="comic_hans">Comic Hans</option>
@@ -35,10 +39,12 @@
           <option value="the_boss">The Boss</option>
           <option value="the_magician">The Magician</option>
         </select><br>
+        <img id="villain_hand" src="../images/ _waiting.svg"></img>
+        <br>
         <button type = "submit" id="throw_choice_button">Throw Choice</button>
       </form>
     </div>
   <% include global/footer %>
-
- </body>
+  <script src="../../scripts/scripts.js"></script>
+</body>
 </html>
