@@ -219,9 +219,8 @@ app.get('/:user/rules', function(request, response){
 });
 
 app.get('/:user/stats', function(request, response){
-  var this_user={
-      name: request.params.user,
-  }
+  var this_user=[]
+  this_user[0]= request.params.user
   var villains_data=[];
   //load the data from the csv
   var v_file=fs.readFileSync("data/villains.csv", "utf8");
