@@ -12,6 +12,26 @@
   <a class="headerlink" href ="/<%=user[0]%>/stats">View Stats</a>
   <a class="headerlink" href ="/<%=user[0]%>/rules">View Rules</a>
   <a class="headerlink" href ="/">Logout</a>
+  <h2><%=user[0]%>'s Stats</h2>
+  <div id="user_stats">
+    <table>
+      <tr>
+        <th class="top_row">Player Name</th>
+        <th class="top_row">Games Played</th>
+        <th class="top_row">Games Won</th>
+        <th class="top_row">Games Lost</th>
+        <th class="top_row">Ties</th>
+      </tr>
+      <tr>
+      <%for(var i=0;i<5;i++){%>
+        <td>
+        <%=user[i]%>
+        </td>
+        <%}%>
+        <tr>
+      </table>
+  </div>
+  <h2>Leaderboard</h2>
   <div id="stats">
     <table>
       <tr>
@@ -22,7 +42,7 @@
         <th class="top_row">Ties</th>
       </tr>
 
-      <%for(var i=0;i<users.length;i++){%>
+      <%for(var i=0;i<Math.min(10,users.length);i++){%>
       <tr>
         <td>
         <%=users[i].name%>
@@ -45,6 +65,7 @@
       <%}%>
     </table>
   </div>
+  <h2>Villain Stats</h2>
   <div id="villain_stats">
     <table>
       <tr>
