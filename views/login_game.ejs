@@ -12,7 +12,10 @@
       <h2>Play the Game</h2>
       <h4><%=user.name%> it's your turn to bust a move!</h4>
       <form action= "/<%=user.name%>/results" method="get">
+
         <p class="left">Enter your choice of weapon:</p>
+        <p class="right">Enter your villain:</p>
+        <br>
         <br>
         <br>
         <select clas="left" id="weapon_select" name="weapon">
@@ -21,9 +24,7 @@
           <option value="rock">Rock</option>
           <option value="scissors">Scissors</option>
         </select>
-        <p class="right">Enter your villain:</p>
-        <br>
-        <br>
+
         <select id="villain_select" class="right" name="villain">
           <option value=" "> </option>
           <option value="bones">Bones</option>
@@ -38,10 +39,16 @@
           <option value="spock">Spock</option>
           <option value="the_boss">The Boss</option>
           <option value="the_magician">The Magician</option>
-        </select><br>
-        <img id="villain_hand" src="../images/ _waiting.svg"></img>
+        </select>
+
         <br>
-        <button type = "submit" id="throw_choice_button">Throw Choice</button>
+        <br>
+
+        <img id="player_hand" src="../images/ _waiting.svg"></img>
+        <img id="villain_hand" src="../images/ _waiting.svg"></img>
+
+        <button class="center" type = "submit" id="throw_choice_button">Throw Choice</button>
+
       </form>
     </div>
   <% include global/footer %>
