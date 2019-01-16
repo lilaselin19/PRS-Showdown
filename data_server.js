@@ -257,6 +257,14 @@ app.get('/:user/stats', function(request, response){
     user_object["paper"]=parseInt(single_user[5]);
     user_object["rock"]=parseInt(single_user[6]);
     user_object["scissors"]=parseInt(single_user[7]);
+    if(user_object.name==this_user[0]){
+      this_user[1]=parseInt(single_user[2]);
+      this_user[2]=parseInt(single_user[3]);
+      this_user[3]=parseInt(single_user[4]);
+      this_user[4]=parseInt(single_user[5]);
+      this_user[5]=parseInt(single_user[6]);
+      this_user[6]=parseInt(single_user[7]);
+    }
 
     users_data.push(user_object);
     if(single_user[0]==this_user["name"]) this_user=single_user[0]
