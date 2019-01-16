@@ -5,8 +5,13 @@
   <link rel="stylesheet" href="../styles/style.css">
  </head>
 <body>
-  <% include global/header %>
-
+  <img id="headerimg" src="../images/logo.png" height="100" width="150">
+  <h1>P, R, S: Showdown</h1>
+  <a class="headerlink" href ="/<%=user[0]%>/about">About</a>
+  <a class="headerlink" href ="/<%=user[0]%>/game">Game</a>
+  <a class="headerlink" href ="/<%=user[0]%>/stats">View Stats</a>
+  <a class="headerlink" href ="/<%=user[0]%>/rules">View Rules</a>
+  <a class="headerlink" href ="/">Logout</a>
   <div id="stats">
     <table>
       <tr>
