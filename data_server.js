@@ -20,6 +20,12 @@ app.get('/', function(request, response){
   response.render('index');
 });
 
+app.get('/index', function(request, response){
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render('index');
+});
+
 app.get('/login', function(request, response){
   //console.log('Login requested');
   var user_data={
