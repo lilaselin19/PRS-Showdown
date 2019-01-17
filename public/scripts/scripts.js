@@ -12,4 +12,5 @@ var v_img = document.getElementById("villain_hand");
 villains.addEventListener("change",function(){
   v_img.src="../images/"+villains.value+"_waiting.svg";
 });
+
 ///////////////////Helper function//////////////////
