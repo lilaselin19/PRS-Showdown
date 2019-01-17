@@ -7,10 +7,10 @@
 
 <body>
   <% include global/header %>
-
   <div id="throw_choice">
-      <h2>Play the Game</h2>
-      <h4><%=user.name%> it's your turn to bust a move!</h4>
+    <img id="ref" class="center"src="../images/ref/three.svg"></img>
+      <h2>Play the Game, <%=user.name%> </h2>
+      <h4 id="ref_text">Three!</h4>
       <form action= "/<%=user.name%>/results" method="get">
 
         <p class="left">Enter your choice of weapon:</p>
@@ -18,7 +18,7 @@
         <br>
         <br>
         <br>
-        <select clas="left" id="weapon_select" name="weapon">
+        <select class="left" id="weapon_select" name="weapon">
           <option value=" "> </option>
           <option value="paper">Paper</option>
           <option value="rock">Rock</option>
