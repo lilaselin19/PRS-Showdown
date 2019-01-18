@@ -11,6 +11,8 @@
    version="1.1"
    x="0px"
    y="0px"
+   stroke="lemonchiffon"
+   fill="lemonchiffon"
    id="svg2"
    inkscape:version="0.91 r13725"
    sodipodi:docname="pixie_rock.svg"
@@ -39,8 +41,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="754"
-     inkscape:window-height="480"
+     inkscape:window-width="980"
+     inkscape:window-height="646"
      id="namedview14"
      showgrid="false"
      fit-margin-top="0"
@@ -48,12 +50,12 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="3.025641"
-     inkscape:cx="15"
+     inkscape:cx="-32.923729"
      inkscape:cy="24"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="g8" />
   <title
      id="title4">Hand Left Rock</title>
   <desc
@@ -64,11 +66,12 @@
      style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1">
     <g
        id="g10"
-       style="fill:#000000">
+       style="fill:#fffacd;fill-opacity:1">
       <path
          d="m 69,30 0,24 -6,0 0,3 9,0 0,-2 0,-26.5 0,-1.5 -6,0 0,3 3,0 z m -15,27 0,3 9,0 0,-3 -9,0 z m -18,3 0,3 18,0 0,-3 -18,0 z m -6,-27 0,3 9,0 0,-3 -9,0 z m 3,24 0,3 3,0 0,-3 -3,0 z m 27,-33 0,3 6,0 0,-3 -6,0 z m -24,-3 0,3 3,0 0,-3 -3,0 z m 3,-3 0,3 3,0 0,-3 -3,0 z m 15,0 0,3 3,0 0,-3 -3,0 z m 3,3 0,3 3,0 0,-3 -3,0 z m -15,-6 0,3 12,0 0,-3 -12,0 z m -9,36 0,3 9,0 0,-3 -9,0 z m -3,-9 0,3 9,0 0,-3 -9,0 z m 0,-18 0,3 24,0 0,-3 -24,0 z m 0,27 0,6 3,0 0,-6 -3,0 z m -3,-9 0,9 3,0 0,-9 -3,0 z m -3,-6 0,6 3,0 0,-6 -3,0 z m 3,-9 0,9 3,0 0,-9 -3,0 z"
          id="path12"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         style="fill:#fffacd;fill-opacity:1" />
     </g>
   </g>
 </svg>

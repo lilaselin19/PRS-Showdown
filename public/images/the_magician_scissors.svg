@@ -37,23 +37,24 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
+     inkscape:window-width="1280"
+     inkscape:window-height="698"
      id="namedview16"
      showgrid="false"
      inkscape:zoom="2.36"
      inkscape:cx="50"
      inkscape:cy="50"
      inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <title
      id="title4">hand_wind</title>
   <path
      d="m 30.37,78 0.63,0 0,-4.83 5.17,-5.17 10,0 8.32,-8.32 4.35,-1.42 L 70,60 88,60 88,80 70.83,80 56.83,94 31.59,94 8,83.32 l 0,-6.76 7,-5 z M 12,80.68 32.41,90 l 22.76,0 14,-14 14.83,0 0,-12 -14.13,0 -10.7,-1.64 -2.53,0.83 -8.81,8.81 -10,0 -2.83,2.83 0,3.17 14.17,0 5.41,-5.41 2.83,2.83 -6.58,6.58 -21.2,0 -14,-5.93 -3.63,2.56 z"
      id="path6"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     style="fill:#ff0000;stroke:#000000" />
   <polygon
      points="70,58 70,62 75.83,62 80,57.83 80,50.17 75.83,46 38,46 38,50 74.17,50 76,51.83 76,56.17 74.17,58 74.17,58 "
      id="polygon8"

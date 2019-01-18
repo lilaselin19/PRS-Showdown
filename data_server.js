@@ -95,6 +95,11 @@ app.get('/:user/results', function(request, response){
       weapon: request.query.weapon,
       villain: request.query.villain,
   };
+  if(user_data["villain"]==" " || user_data["weapon"]==" "){
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render('game', {user:user_data});
+  }
 
 //finds player in csv file
   var user_file=fs.readFileSync("data/users.csv", "utf8");
@@ -160,6 +165,12 @@ app.get('/:user/results', function(request, response){
         if(r<.5) v_hand="scissors";
         else if(r<.75) v_hand="rock";
         else v_hand="paper";
+      }
+      else if(single_v[7]=="Favors Paper"){
+        var r = Math.random();
+        if(r<.9) v_hand="paper";
+        else if(r<.95) v_hand="rock";
+        else v_hand="scissors";
       }
     }
   }

@@ -16,7 +16,9 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="bones_paper.svg"
    width="88.01577"
-   height="60.593964"><metadata
+   height="60.593964"
+   stroke="black"
+   fill="white"><metadata
      id="metadata14"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
@@ -43,7 +45,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg2" /><g
+     inkscape:current-layer="svg2"/><g
      id="g4"
      transform="matrix(0,1,1,0,-5.992129,-19.703027)"><path
        d="m 49.24643,49.44084 -1.5498,0 c -0.60742,0 -1.09961,0.49268 -1.09961,1.1001 0,0.60742 0.49219,1.1001 1.09961,1.1001 l 1.5498,0 c 2.9502,0 5.35059,2.3999 5.35059,5.3501 0,0.60742 0.49219,1.1001 1.09961,1.1001 0.60742,0 1.09961,-0.49268 1.09961,-1.1001 -10e-6,-4.1631 -3.38673,-7.5503 -7.54981,-7.5503 z"

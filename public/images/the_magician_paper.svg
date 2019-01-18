@@ -37,23 +37,24 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
+     inkscape:window-width="1280"
+     inkscape:window-height="698"
      id="namedview216"
      showgrid="false"
      inkscape:zoom="2.36"
      inkscape:cx="50"
      inkscape:cy="50"
      inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg202" />
   <title
      id="title204">hand_file</title>
   <path
      d="m 36.37,78 0.63,0 0,-4.83 5.17,-5.17 10,0 8.32,-8.32 4.35,-1.42 L 76,60 94,60 94,80 76.83,80 62.83,94 37.59,94 14,83.32 l 0,-6.76 7,-5 z M 18,80.68 38.41,90 l 22.76,0 14,-14 14.83,0 0,-12 -14.13,0 -10.7,-1.64 -2.53,0.83 -8.81,8.81 -10,0 -2.83,2.83 0,3.17 14.17,0 5.42,-5.41 2.82,2.82 -6.58,6.59 -21.2,0 -14,-5.93 -3.63,2.56 z"
      id="path206"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     style="fill:#ff0000;stroke:#000000" />
   <path
      d="M 19.17,6 50,6 50,58 6,58 6,19.17 Z M 10,54 46,54 46,10 20.83,10 10,20.83 Z"
      id="path208"
