@@ -278,9 +278,10 @@ app.get('/:user/stats', function(request, response){
       this_user[1]=parseInt(single_user[2]);
       this_user[2]=parseInt(single_user[3]);
       this_user[3]=parseInt(single_user[4]);
-      this_user[4]=parseInt(single_user[5]);
-      this_user[5]=parseInt(single_user[6]);
-      this_user[6]=parseInt(single_user[7]);
+      this_user[4]=this_user[1]-this_user[2]-this_user[3]
+      this_user[5]=parseInt(single_user[5]);
+      this_user[6]=parseInt(single_user[6]);
+      this_user[7]=parseInt(single_user[7]);
     }
 
     users_data.push(user_object);
